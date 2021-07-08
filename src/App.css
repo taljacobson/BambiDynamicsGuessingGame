@@ -1,17 +1,11 @@
+body > * {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
 
 .App-header {
   min-height: 100vh;
@@ -22,18 +16,55 @@
   font-size: calc(10px + 2vmin);
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
+
+.playbtn {
+  padding: 0.7em;
+  margin: 0.1em;
+  border-radius: 1em;
+  border: none;
+  box-shadow: 1px 1px 7px 8px #f2fff0;
+  background: #b4ffa8;
+  color: white;
+  font-size: 2em;
+  text-shadow: 0 0 2px black;
+  letter-spacing: .22em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 240ms ease;
 }
 
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.playbtn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+
+.score-item {    
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5em;
+  padding: 0.5em;
+  border: 2px solid #18161d3b;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.score-item-inner {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.score-item-title {
+  font-size: 2em;
+}
+
+.score-item-subtitle {
+  font-size: 1.1em;
+}
+
+.score-item-score {
+  font-size: 2em;
 }
