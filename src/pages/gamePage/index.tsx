@@ -39,19 +39,19 @@ function GamePage() {
         return <div />
     }
 
-    return <div>
+    return <div className="game-page">
         <h6>game Page</h6>
-        <h5>lives left
+        <h5 className="lives-left">lives left
             <span style={
                 { color: lives <= 1 ? 'red' : 'inherit' }
             } >{lives}</span> </h5>
-        <h1 >
+        <h1 className="game-value" >
             {word.value}
         </h1>
         <form onSubmit={onCheckGuess} >
-            <input type="text" onChange={(e) => setValue(e.target.value)} maxLength={word.originalValue.length} value={value} />
+            <input autoFocus className="game-input" type="text" onChange={(e) => setValue(e.target.value)} maxLength={word.originalValue.length} value={value} />
             <br />
-            <button >check Guess</button>
+            <button className="checkbtn playbtn" >check Guess</button>
         </form>
     </div>
 }

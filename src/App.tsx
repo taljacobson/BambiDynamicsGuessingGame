@@ -12,7 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-container">
         <Suspense fallback={() => <div>Loading</div>}>
           {currentPage === 'intro' && <IntroPage />}
           {currentPage === 'game' && <GamePage />}

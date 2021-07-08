@@ -1,3 +1,10 @@
+:root {
+  --h: 112deg;
+  --s: 100%;
+  --l: 73%;
+}
+
+
 body > * {
   box-sizing: border-box;
 }
@@ -7,13 +14,14 @@ body > * {
 }
 
 
-.App-header {
+.App-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  margin-inline: 1.5em;
 }
 
 
@@ -22,8 +30,8 @@ body > * {
   margin: 0.1em;
   border-radius: 1em;
   border: none;
-  box-shadow: 1px 1px 7px 8px #f2fff0;
-  background: #b4ffa8;
+  box-shadow: 1px 1px 7px 8px  hsl(calc(var(--h) * 0.9) calc(var(--s) / 2) var(--l));
+  background: hsl(var(--h) var(--s) var(--l));
   color: white;
   font-size: 2em;
   text-shadow: 0 0 2px black;
@@ -31,12 +39,13 @@ body > * {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: transform 240ms ease;
+  transition: all 240ms ease;
 }
 
 .playbtn:hover {
   cursor: pointer;
   transform: scale(1.1);
+  --l: 85%; 
 }
 
 
@@ -46,8 +55,8 @@ body > * {
   justify-content: space-between;
   margin: 0.5em;
   padding: 0.5em;
-  border: 2px solid #18161d3b;
-  border-radius: 4px;
+  border: 2px solid hsl(var(--h) var(--s) calc(var(--l) + 20%));;
+  border-radius: 14px;
   font-size: 1rem;
 }
 
@@ -67,4 +76,63 @@ body > * {
 
 .score-item-score {
   font-size: 2em;
+}
+
+
+.lives-left {
+  font-size: 1.01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lives-left > span {
+  margin-inline-start: 1ch;
+  font-size: 1.2em;
+}
+
+input, input:focus {
+  outline: none;
+  padding: 1rem;
+    font-size: 2em;
+    border: 1px solid hsl(var(--h) var(--s) var(--l));
+    border-radius: 1rem;
+}
+
+input:focus {
+  --h: 133deg;
+  border-width: 2px;
+  padding: calc(1rem - 1px);
+}
+
+.checkbtn {
+  font-size: 0.5em;
+  --h: 131deg;
+  margin: 3em auto;
+}
+
+.gameForm-score {
+  font-size: 1.3em;
+  line-height: 10px;
+}
+
+.gameForm-score > strong {
+  font-size: 1.06em;
+}
+
+.gameFormForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameFormForm > label {
+  display: flex;
+  flex-flow: column;
+  align-items: self-end;
+}
+
+.gameFormForm > label > input {
+  font-size: 1em;
+  margin-top: 0.5em;
 }

@@ -18,9 +18,9 @@ function GameFormPage() {
 
     return <div>
         <h4>game over... better luck next time</h4>
-        <h3>your score <strong>{score}</strong> </h3>
+        <h3 className="gameForm-score"><span>your score</span> <strong>{score}</strong> </h3>
 
-        <form onSubmit={onSubmit}>
+        <form className="gameFormForm" onSubmit={onSubmit}>
             <label>
                 <span>name: </span>
                 <input required name="name" type="text" minLength={2} />
@@ -31,7 +31,7 @@ function GameFormPage() {
                 <input name="phone" type="phone" />
             </label>
             <br />
-            <button>sumbit</button>
+            <button className="checkbtn playbtn">sumbit</button>
         </form>
     </div>
 }

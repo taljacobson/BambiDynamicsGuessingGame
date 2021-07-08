@@ -113,7 +113,7 @@ export const counterSlice = createSlice({
                         if (index === 0 || index === word.length - 1) {
                             return latter;
                         }
-                        return Math.random() > .68 ? '_' : latter
+                        return Math.random() > .5 && index % 3 ? '_' : latter
                     }).join('');
 
                     return {
@@ -130,7 +130,6 @@ export const counterSlice = createSlice({
 
         builder
             .addCase(fetchScoresAsync.fulfilled, (state, action) => {
-                console.log(action);
                 state.scores = action.payload ?? []
             })
     },
